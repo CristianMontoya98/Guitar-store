@@ -1,128 +1,163 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap");
 
-:root{
-  --gray:#2B2A2A;
-  --white:#FFFF;
-  --brown:#43321c;
-  font-family: 'Lato', sans-serif;
+:root {
+    --gray: #2b2a2a;
+    --white: #ffff;
+    --brown: #43321c;
+    
 }
-body{
-  height: 100vh;
-  margin: 0;
-  overflow: hidden;
+body {
+    font-family: "Lato", sans-serif;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
 }
-.page{
-  position: relative;
-  height: 100vh;
-  width: 100%;
+.page {
+    position: relative;
+    height: 100vh;
+    width: 100%;
 }
 
-.container{
-  position: absolute;
-  z-index: 1;
-  display: grid;
-  grid-template-columns: 55% 45%;
-  grid-template-rows: 20% 50% 30%;
-  grid-template-areas: "nav     aside"
-                       "section aside"
-                       "footer asaide";
-  height: 100%;
-  width: 100%;
+.container {
+    position: absolute;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 55% 45%;
+    grid-template-rows: 20% 50% 30%;
+    grid-template-areas:
+        "nav     aside"
+        "section aside"
+        "footer asaide";
+    height: 100%;
+    width: 100%;
 }
 
 .navBar {
-  background: var(--white);
-  grid-area: nav;
+    background: var(--white);
+    grid-area: nav;
+    display: flex;
 }
 
-.navBar__content{
-  display: flex;
-  align-items: center;
-  width: 100%;
-  padding: 0 0 0 80px;
-  animation: 2s navbar 0.5s ease-in-out;
+.navBar__content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0 0 0 80px;
+    animation: 2s navbar 0.5s ease-in-out;
 }
 
-@keyframes navbar{
-  0%{
-    transform: translateY(-200px);
-  }
-  100%{
-    transform: translateY(0px);
-  }
+@keyframes navbar {
+    0% {
+        transform: translateY(-200px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
 }
-.navBar__content img{
-  width: 80px;
-  height: 50px;
+.navBar__content img {
+    width: 80px;
+    height: 50px;
 }
 
-.navBar__content ul{
-  display: flex;
-  justify-content: space-evenly;
-  list-style: none;
-  padding: 0;
-  width: 450px;
+.navBar__content ul {
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+    padding: 0;
+    width: 450px;
 }
+
 .navBar__content ul li a {
-  text-decoration: none;
-  color: var(--gray);
+    text-decoration: none;
+    color: var(--gray);
+}
+.main-content {
+    grid-area: section;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 80px;
+    animation: 2s main-content 0.5s ease-in-out;
+}
+.main-content p:first-child {
+  font-size: 36px;
+  font-weight: 300;
+  margin: 0 0 -14px 44px;
+}
+.main-content h1{
+  font-size: 48px;
+  font-weight: 700;
+  margin: 0 0 28px 0;
+}
+.main-content p:last-child {
+  width: 60%;
+  margin: 0;
 }
 
-.loader{
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: white;
-  position: absolute;
-  z-index: 3;
-  animation: loader 2s linear forwards;
+@keyframes main-content {
+    0% {
+        transform: translateY(-600px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+.loader {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    position: absolute;
+    z-index: 3;
+    animation: loader 2s linear forwards;
 }
 
-@keyframes loader{
-  0% {
-    opacity: 1;
-    visibility: visible;
-  }
-  95% {
-    opacity: 1;
-    visibility: visible;
-  }
-  100% {
-    opacity: 0;
-    visibility: hidden;
-  }
+@keyframes loader {
+    0% {
+        opacity: 1;
+        visibility: visible;
+    }
+    95% {
+        opacity: 1;
+        visibility: visible;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
 }
 
-.loader div{
-  background: black;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  margin: 10px;
-  transform: scale(0);
-  animation: scaling 2s ease-in-out infinite;
+.loader div {
+    background: black;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 10px;
+    transform: scale(0);
+    animation: scaling 2s ease-in-out infinite;
 }
 
-.loader div:nth-child(1){
-  animation-delay: 0.2s;
+.loader div:nth-child(1) {
+    animation-delay: 0.2s;
 }
-.loader div:nth-child(2){
-  animation-delay: 0.4s;
+.loader div:nth-child(2) {
+    animation-delay: 0.4s;
 }
-.loader div:nth-child(3){
-  animation-delay: 0.6s;
+.loader div:nth-child(3) {
+    animation-delay: 0.6s;
 }
 
-@keyframes scaling{
-  0%, 100%{
-    transform: scale(0.2);
-  }
-  40%{
-    transform: scale(1);
-  }
-  50%{
-    transform: scale(1);
-  }
+@keyframes scaling {
+    0%,
+    100% {
+        transform: scale(0.2);
+    }
+    40% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1);
+    }
 }

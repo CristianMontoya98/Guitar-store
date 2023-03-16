@@ -30,6 +30,44 @@ body{
   width: 100%;
 }
 
+.navBar {
+  background: var(--white);
+  grid-area: nav;
+}
+
+.navBar__content{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0 0 0 80px;
+  animation: 2s navbar 0.5s ease-in-out;
+}
+
+@keyframes navbar{
+  0%{
+    transform: translateY(-200px);
+  }
+  100%{
+    transform: translateY(0px);
+  }
+}
+.navBar__content img{
+  width: 80px;
+  height: 50px;
+}
+
+.navBar__content ul{
+  display: flex;
+  justify-content: space-evenly;
+  list-style: none;
+  padding: 0;
+  width: 450px;
+}
+.navBar__content ul li a {
+  text-decoration: none;
+  color: var(--gray);
+}
+
 .loader{
   width: 100%;
   height: 100%;

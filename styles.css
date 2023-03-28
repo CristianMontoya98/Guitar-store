@@ -1,9 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap");
 
 :root {
-    --gray: #2b2a2a;
+    --brown: #2b2a2a;
     --white: #ffff;
-    --brown: #43321c;
+    --gray: #3d0312;
 }
 
 body {
@@ -24,10 +24,11 @@ body {
     z-index: 1;
     display: grid;
     grid-template-columns: 55% 45%;
-    grid-template-rows: 30% 70%;
+    grid-template-rows: 20% 50%, 30%;
     grid-template-areas:
         "nav     aside"
-        "section aside";
+        "section aside"
+        "footer aside";
     height: 100%;
     width: 100%;
 }
@@ -223,4 +224,50 @@ body {
     50% {
         transform: scale(1);
     }
+}
+
+.footer {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    background: var(--brown);
+    border-radius: 0 80px 0 0;
+    transform: translateY(100%);
+    animation-name: footer;
+    animation-duration: 0.5s;
+    animation-delay: 2.5s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes footer {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.footer div {
+    background: var(--gray);
+    width: 130px;
+    height: 40%;
+    border-radius: 20px 20px 0 0;
+    display: flex;
+    justify-content: center;
+}
+
+.footer div img {
+    width: 200px;
+    position: absolute;
+    bottom: 30px;
+    transform: translateY(0px) scale(1);
+    transition: transform 0.5s ease-in-out;
+}
+
+.footer div:hover img {
+    cursor: pointer;
+    transform: translateY(-20px) scale(1.1);
+    transition: transform 0.3s ease-in-out;
 }

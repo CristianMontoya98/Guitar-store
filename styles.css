@@ -3,7 +3,7 @@
 :root {
     --brown: #2b2a2a;
     --white: #ffff;
-    --gray: #3d0312;
+    --darkRed: #3d0312;
 }
 
 body {
@@ -72,7 +72,7 @@ body {
 
 .navBar__content ul li a {
     text-decoration: none;
-    color: var(--gray);
+    color: var(--darkRed);
 }
 
 .main-content {
@@ -227,29 +227,29 @@ body {
 }
 
 .hidden {
-  display: none !important;
+    display: none !important;
 }
 
-.visible{
-  display: grid !important;
+.visible {
+    display: grid !important;
 }
 
 .modal {
-  width: 100%;
-  height: 100%;
-  background:rgba(0, 0, 0, 0.5);
-  position: absolute;
-  z-index: 4;
-  display: grid;
-  place-items: center;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    z-index: 4;
+    display: grid;
+    place-items: center;
 }
 .modal__content {
-  background: white;
-  width: 50%;
-  height: 50%;
+    background: white;
+    width: 50%;
+    height: 50%;
 }
-.modal__content--close{
-  cursor: pointer;
+.modal__content--close {
+    cursor: pointer;
 }
 .footer {
     display: flex;
@@ -275,7 +275,7 @@ body {
 }
 
 .footer div {
-    background: var(--gray);
+    background: var(--darkRed);
     width: 130px;
     height: 40%;
     border-radius: 20px 20px 0 0;
